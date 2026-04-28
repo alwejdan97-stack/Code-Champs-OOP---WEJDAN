@@ -15,4 +15,24 @@ public class Student extends Person implements StudentInterface {
     public void setRegistrationYear(String registrationYear) {
         this.registrationYear = registrationYear;
     }
+
+    @Override
+    public void attendCourse() {
+        
+    }
+
+    @Override
+    public void registerCourse() {
+
+    }
+
+    @Override
+    public void dropCourse() {
+
+    }
+
+    @Override
+    public void takeExam() {
+
+    }
 }
