@@ -11,4 +11,6 @@ public class Constants {
     public static String COURSE_ALREADY_EXISTS = "Course is already added";
     public static String STUDENT_COURSE_REGISTERED = "Course has been registered for this student";
     public static String STUDENT_COURSE_NOT_REGISTERED = "Student course registration has failed";
+    public static String TEACHER_COURSE_ASSIGNED = "Course has been assigned for this teacher";
+    public static String TEACHER_NOT_COURSE_ASSIGNED = "Course assignment has failed";
 }

@@ -1,6 +1,8 @@
 package ObjectOrientedProgramming.OOPDemo.Behaviours;
 
+import ObjectOrientedProgramming.OOPDemo.Entities.Course;
+
 public interface TeacherInterface {
 
-    void teachCourse();
+    void assignCourse(Course course);
 }
