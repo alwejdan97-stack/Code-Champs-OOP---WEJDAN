@@ -37,16 +37,11 @@ public class Student extends Person implements StudentInterface {
         List<Course> tempCourseList = this.getCourseList();
 
         for (Course c : tempCourseList) {
-            if(c.getId().equals(courseIdToDrop)){
+            if (c.getId().equals(courseIdToDrop)) {
                 tempCourseList.remove(c);
             }
         }
 
         this.setCourseList(tempCourseList);
-    }
-
-    @Override
-    public void takeExam() {
-
     }
 }

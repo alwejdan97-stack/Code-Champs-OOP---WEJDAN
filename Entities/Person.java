@@ -56,11 +56,6 @@ public class Person extends ParentEntity {
     }
 
     public void setCourseList(List<Course> courseList) {
-        for (Course c: courseList){
-            if(!c.getActive()){
-                System.out.println("Trying to add in active course to the courses list for student");
-            }
-        }
         this.courseList = courseList;
     }
 }

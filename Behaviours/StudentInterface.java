@@ -7,5 +7,4 @@ public interface StudentInterface {
 
     void dropCourse(Integer courseIdToDrop);
 
-    void takeExam();
 }
