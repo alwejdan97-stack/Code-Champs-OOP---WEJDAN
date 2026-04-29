@@ -1,7 +1,6 @@
 package ObjectOrientedProgramming.OOPDemo.Services;
 
 import ObjectOrientedProgramming.OOPDemo.Entities.Student;
-import ObjectOrientedProgramming.OOPDemo.Entities.University;
 import ObjectOrientedProgramming.OOPDemo.Utils.Constants;
 
 import java.util.ArrayList;
@@ -12,6 +11,8 @@ import java.util.UUID;
 public class StudentService {
     CourseService courseService = new CourseService();
     DepartmentService departmentService = new DepartmentService();
+
+
     public Student addNewStudent(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(" ** Adding new Student **");

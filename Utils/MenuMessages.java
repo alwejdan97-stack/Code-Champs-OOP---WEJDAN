@@ -15,7 +15,6 @@ public class MenuMessages {
             2- Show Departments
             3- Register Students
             4- Hire Teacher
-            5- Charge Fees
-            6- Go back to Main Menu
+            5- Go back to Main Menu
             """;
 }

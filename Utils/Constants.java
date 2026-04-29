@@ -16,4 +16,12 @@ public class Constants {
     public static String INPUT_EXIT_CONTINUE_MESSAGE_COURSE = "Enter q to exit, press ENTER to continue for more courses";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_DEPARTMENTS = "Enter q to exit, press ENTER to continue for more departments";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_STUDENTS = "Enter q to exit, press ENTER to continue for more students";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_PERSON = "Enter q to exit, press ENTER to continue for more";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_TEACHER = "Enter q to exit, press ENTER to continue for more teachers";
+    public static String PERSON_ENTER_NAME = "Enter Name: ";
+    public static String PERSON_ENTER_EMAIL = "Enter Email: ";
+    public static String PERSON_ENTER_PHONE_NUMBER = "Enter Phone Number: ";
+    public static String PERSON_ENTER_ID_CARD = "Enter Id Card Number: ";
+    public static String PERSON_ENTER_DATE_OF_BIRTH = "Enter Date of Birth: ";
+
 }
