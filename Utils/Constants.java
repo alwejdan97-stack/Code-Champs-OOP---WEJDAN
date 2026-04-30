@@ -25,5 +25,7 @@ public class Constants {
     public static String PERSON_ENTER_DATE_OF_BIRTH = "Enter Date of Birth: ";
     public static String DEPARTMENT_UPDATE_MESSAGE = "Enter new department";
     public static String DEPARTMENT_DELETE_MESSAGE = "Enter a department to delete";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_DEPARTMENT= "Enter q to exit, press ENTER to continue for more departments";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_DEPARTMENT= "Enter q to exit, press ENTER to continue for more departments";
 
 }

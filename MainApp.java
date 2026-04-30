@@ -36,7 +36,7 @@ public class MainApp {
                     System.out.println("*********** Department Menu ***********");
                     System.out.println(MenuMessages.DEPARTMENT_MENU_MESSAGE);
                     Integer departmentOption=input.nextInt();
-                    //deptMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                    deptMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
                     }
                 }
                 case 3 -> System.out.println("Teacher Menu");

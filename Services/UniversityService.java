@@ -8,7 +8,7 @@ import java.util.UUID;
 public class UniversityService {
 
     public static University university = universityInit();
-    //public static Department department = departmentInit();
+
 
     DepartmentService departmentService = new DepartmentService();
     StudentService studentService = new StudentService();
