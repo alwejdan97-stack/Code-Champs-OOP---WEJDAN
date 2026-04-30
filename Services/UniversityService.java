@@ -1,5 +1,6 @@
 package ObjectOrientedProgramming.OOPDemo.Services;
 
+import ObjectOrientedProgramming.OOPDemo.Entities.Department;
 import ObjectOrientedProgramming.OOPDemo.Entities.University;
 
 import java.util.UUID;
@@ -7,6 +8,7 @@ import java.util.UUID;
 public class UniversityService {
 
     public static University university = universityInit();
+    //public static Department department = departmentInit();
 
     DepartmentService departmentService = new DepartmentService();
     StudentService studentService = new StudentService();

@@ -18,6 +18,9 @@ public class Department extends ParentEntity implements DepartmentInterface {
         this.offeredCourses = offeredCourses;
     }
 
+    List<Department> departmentList;
+    public List<Department> getDepartment(){return departmentList;}
+
     @Override
     public Boolean addCourse(Course course) {
 
@@ -61,6 +64,38 @@ public class Department extends ParentEntity implements DepartmentInterface {
         }
         System.out.println(Constants.COURSE_NOT_FOUND);
         return new Course();
+    }
+
+    public Boolean updateDepartment(UUID id, Department updatedDepartment){
+        Department departmentToUpdate= findDepartmentById(id);
+        if(!departmentToUpdate.getDepartment().equals(null)){
+            departmentList.remove(departmentToUpdate);
+            if(updatedDepartment.getDepartment().equals(departmentToUpdate.getDepartment())){
+                departmentList.add(updatedDepartment);
+                System.out.println("updated successfully");
+                return true;
+            }
+        }
+        return null;
+    }
+
+    public Department findDepartmentById(UUID deptId){
+        for(Department d: departmentList){
+            if(d.getDepartment().equals(deptId)){
+                return d;
+            }
+        }
+        System.out.println("department not found message");
+        return new Department();
+    }
+
+    public Boolean deleteDepartment(UUID id, Department departmentToDelete){
+        Department departmentToUpdate= findDepartmentById(id);
+        if(!departmentToUpdate.getDepartment().equals(null)){
+            departmentList.remove(departmentToDelete);
+                return true;
+        }
+        return null;
     }
 
     @Override
