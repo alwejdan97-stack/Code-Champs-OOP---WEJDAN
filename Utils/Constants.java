@@ -31,4 +31,8 @@ public class Constants {
     public static String STUDENT_DELETE_MESSAGE = "Enter a student to delete";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_STUDENT= "Enter q to exit, press ENTER to continue for more students";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_STUDENT= "Enter q to exit, press ENTER to continue for more students";
+    public static String TEACHER_UPDATE_MESSAGE = "Enter new teacher";
+    public static String TEACHER_DELETE_MESSAGE = "Enter a teacher to delete";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_TEACHER= "Enter q to exit, press ENTER to continue for more teachers";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_TEACHER= "Enter q to exit, press ENTER to continue for more teachers";
 }

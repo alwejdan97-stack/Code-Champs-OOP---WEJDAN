@@ -73,7 +73,7 @@ public class TeacherService {
         for(Teacher t: teacherList){
             if(t.getName().equalsIgnoreCase(oldTeacher)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
-                System.out.println(Constants.STUDENT_UPDATE_MESSAGE);
+                System.out.println(Constants.TEACHER_UPDATE_MESSAGE);
                 String teacherToUpdate = scanner.nextLine();
                 t.setName(teacherToUpdate);
                 found=true;
@@ -95,7 +95,7 @@ public class TeacherService {
     // delete department
     public void deleteTeacher(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println(Constants.STUDENT_DELETE_MESSAGE);
+        System.out.println(Constants.TEACHER_DELETE_MESSAGE);
         String teacherToDelete = scanner.nextLine();
         Boolean found=false;
         for(Teacher t:teacherList){
