@@ -15,7 +15,6 @@ public class DepartmentService {
     List<Department> departmentList=new ArrayList<>();
     Department department=new Department();
     CourseService courseService = new CourseService();
-    University university=new University();
 
     public Department addNewDepartment() {
         Scanner scanner = new Scanner(System.in);
@@ -25,8 +24,8 @@ public class DepartmentService {
         department.setId(UUID.randomUUID());
 
         System.out.println("Enter Department Name");
-        String deptName = scanner.nextLine();
-        department.setName(deptName);
+        //String deptName = scanner.nextLine();
+        department.setName(scanner.nextLine());
         //departmentList.add(deptName);
 
         department.setOfferedCourses(courseService.addNewCourses());
@@ -114,8 +113,6 @@ public class DepartmentService {
             System.out.println("Department Name: " + dept.getName()+" | "+"Department ID: "+dept.getId());
         }
     }
-
-
 
     public Boolean handleDepartmentMenu(Integer departmentOption) {
         switch (departmentOption){

@@ -13,8 +13,8 @@ public class Constants {
     public static String STUDENT_COURSE_NOT_REGISTERED = "Student course registration has failed";
     public static String TEACHER_COURSE_ASSIGNED = "Course has been assigned for this teacher";
     public static String TEACHER_NOT_COURSE_ASSIGNED = "Course assignment has failed";
-    public static String INPUT_EXIT_CONTINUE_MESSAGE_COURSE = "Enter q to exit, press ENTER to continue for more courses";
-    public static String INPUT_EXIT_CONTINUE_MESSAGE_DEPARTMENTS = "Enter q to exit, press ENTER to continue for more departments";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_COURSE = "Enter q to exit, press ENTER to continue for add more courses";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_DEPARTMENTS = "Enter q to exit, press ENTER to continue for add more departments";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_STUDENTS = "Enter q to exit, press ENTER to continue for more students";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_PERSON = "Enter q to exit, press ENTER to continue for more";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_TEACHER = "Enter q to exit, press ENTER to continue for more teachers";
@@ -23,10 +23,10 @@ public class Constants {
     public static String PERSON_ENTER_PHONE_NUMBER = "Enter Phone Number: ";
     public static String PERSON_ENTER_ID_CARD = "Enter Id Card Number: ";
     public static String PERSON_ENTER_DATE_OF_BIRTH = "Enter Date of Birth: ";
-    public static String DEPARTMENT_UPDATE_MESSAGE = "Enter new department";
-    public static String DEPARTMENT_DELETE_MESSAGE = "Enter a department to delete";
-    public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_DEPARTMENT= "Enter q to exit, press ENTER to continue for more departments";
-    public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_DEPARTMENT= "Enter q to exit, press ENTER to continue for more departments";
+    public static String DEPARTMENT_UPDATE_MESSAGE = "Enter new department name";
+    public static String DEPARTMENT_DELETE_MESSAGE = "Enter department name to delete";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_DEPARTMENT= "Enter q to exit, press ENTER to continue for delete more departments";
+    public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_DEPARTMENT= "Enter q to exit, press ENTER to continue for update more departments";
     public static String STUDENT_UPDATE_MESSAGE = "Enter new student name";
     public static String STUDENT_DELETE_MESSAGE = "Enter a student ID to delete";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_STUDENT= "Enter q to exit, press ENTER to continue for delete more students";
