@@ -98,12 +98,6 @@ public class DepartmentService {
             System.out.println("Deleted FAILED");
 
         }
-        /*boolean remove=departmentList.remove(departmentToDelete);
-        if(remove){
-            System.out.println("Deleted successfully");
-        }else{
-            System.out.println("Deleted FAILED");
-        }*/
         Boolean continueFlag = true;
         while (continueFlag){
             System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_DEPARTMENT);
