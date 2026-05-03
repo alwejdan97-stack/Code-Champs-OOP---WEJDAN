@@ -54,9 +54,9 @@ public class StudentService {
 
     public void updateStudent(){
         displayStudents();
-        System.out.println("Enter student ID");
-        String id=scanner.nextLine();
-        UUID uuid=UUID.fromString(id);
+        System.out.println("Enter student name");
+        String name=scanner.nextLine();
+        //UUID uuid=UUID.fromString(id);
        /* UUID uuid;
         try{
             uuid=UUID.fromString(id);
@@ -65,11 +65,12 @@ public class StudentService {
         }*/
         Boolean found=false;
         for(Student s: studentList){
-            if(s.getId().equals(uuid)){
+            if(s.getName().equalsIgnoreCase(name)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 System.out.println(Constants.STUDENT_UPDATE_MESSAGE);
                 //String studentToUpdate = scanner.nextLine();
                 s.setName(scanner.nextLine());
+                System.out.println("Successful UPDATE");
                 found=true;
                 break;
             }
@@ -102,16 +103,16 @@ public class StudentService {
         for(Student s:studentList){
             if(s.getId().equals(uuid)){
                 studentList.remove(s);
+                System.out.println("Successful Delete");
                 found=true;
                 break;
             }
         }
-        if(found){
-            System.out.println("Deleted successfully");
-        }else{
+        if(!found){
             System.out.println("Deleted FAILED");
-
         }
+
+
         Boolean continueFlag = true;
         while (continueFlag){
             System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_STUDENT);

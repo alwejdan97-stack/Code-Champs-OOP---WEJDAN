@@ -61,6 +61,7 @@ public class DepartmentService {
                 System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 //String departmentToUpdate = scanner.nextLine();
                 d.setName(scanner.nextLine());
+                System.out.println("Successful UPDATE");
                 found=true;
                 break;
             }
@@ -86,15 +87,13 @@ public class DepartmentService {
         for(Department d:departmentList){
             if(d.getName().equalsIgnoreCase(departmentToDelete)){
                 departmentList.remove(d);
+                System.out.println("Successful DELETE");
                 found=true;
                 break;
             }
         }
-        if(found){
-            System.out.println("Deleted successfully");
-        }else{
+        if(!found){
             System.out.println("Deleted FAILED");
-
         }
         Boolean continueFlag = true;
         while (continueFlag){

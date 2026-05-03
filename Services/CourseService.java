@@ -14,6 +14,7 @@ public class CourseService {
     public List<Course> courseList=new ArrayList<>();
     University university=new University();
     Department department=new Department();
+    public static Scanner scanner = new Scanner(System.in);
 
     public Course addNewCourse() {
         Scanner scanner = new Scanner(System.in);
@@ -52,16 +53,17 @@ public class CourseService {
 
     // updating department
     public void updateCourse(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter old course Name");
+        displayCourses();
+        System.out.println("Enter course Name");
         String oldCourse=scanner.nextLine();
         Boolean found=false;
         for(Course c:courseList){
             if(c.getName().equalsIgnoreCase(oldCourse)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 System.out.println(Constants.COURSE_UPDATE_MESSAGE);
-                String courseToUpdate = scanner.nextLine();
-                c.setName(courseToUpdate);
+                //String courseToUpdate = scanner.nextLine();
+                c.setName(scanner.nextLine());
+                System.out.println("Successful UPDATE");
                 found=true;
                 break;
             }
@@ -79,22 +81,20 @@ public class CourseService {
     }
     // delete department
     public void deleteCourse(){
-        Scanner scanner = new Scanner(System.in);
+        displayCourses();
         System.out.println(Constants.COURSE_DELETE_MESSAGE);
         String courseToDelete = scanner.nextLine();
         Boolean found=false;
         for(Course c :courseList){
             if(c.getName().equalsIgnoreCase(courseToDelete)){
                 courseList.remove(c);
+                System.out.println("Successful DELETE");
                 found=true;
                 break;
             }
         }
-        if(found){
-            System.out.println("Deleted successfully");
-        }else{
+        if(!found){
             System.out.println("Deleted FAILED");
-
         }
         Boolean continueFlag = true;
         while (continueFlag){
@@ -105,7 +105,14 @@ public class CourseService {
         }
     }
 
-
+    public void displayCourses(){
+        if(courseList.isEmpty()){
+            System.out.println("NO course in the list");
+        }
+        for(Course c:courseList){
+            System.out.println("Course Name: "+ c.getName()+" | "+" Course ID: "+c.getId());
+        }
+    }
 
     public Boolean handleCourse(Integer courseOption) {
         switch (courseOption){
@@ -119,7 +126,7 @@ public class CourseService {
             }
             case 3 -> {
                 System.out.println("== Show course ==");
-                university.displayDepartments();
+                displayCourses();
             }
 
             case 4 -> {

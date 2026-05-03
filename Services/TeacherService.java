@@ -100,15 +100,13 @@ public class TeacherService {
         for(Teacher t:teacherList){
             if(t.getName().equalsIgnoreCase(teacherToDelete)){
                 teacherList.remove(t);
+                System.out.println("Successful DELETE");
                 found=true;
                 break;
             }
         }
-        if(found){
-            System.out.println("Deleted successfully");
-        }else{
+        if(!found){
             System.out.println("Deleted FAILED");
-
         }
         Boolean continueFlag = true;
         while (continueFlag){
