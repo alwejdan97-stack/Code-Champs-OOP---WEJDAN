@@ -104,11 +104,11 @@ public class DepartmentService {
         }
     }
 
-    public void displayDepartment(){
+    /*public void displayDepartment(){
         for(Department d: departmentList){
             System.out.println("ID:"+ d.getId()+" | "+ "Name: "+ d.getName());
         }
-    }
+    }*/
 
     public Boolean handleDepartmentMenu(Integer departmentOption) {
         switch (departmentOption){
