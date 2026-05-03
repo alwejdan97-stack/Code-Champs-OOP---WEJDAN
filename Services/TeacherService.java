@@ -14,11 +14,11 @@ import java.util.UUID;
 public class TeacherService {
 
     static Integer counter = 1;
-    PersonService personService = new PersonService();
-    DepartmentService departmentService = new DepartmentService();
-    CourseService courseService = new CourseService();
-    University university=new University();
-    List<Teacher> teacherList = new ArrayList<>();
+    static PersonService personService = new PersonService();
+    static DepartmentService departmentService = new DepartmentService();
+    static CourseService courseService = new CourseService();
+    static University university=new University();
+    public static List<Teacher> teacherList = new ArrayList<>();
 
 
     public Teacher addNewTeacher() {
@@ -47,13 +47,12 @@ public class TeacherService {
         teacher.setDepartment(departmentService.addNewDepartment());
 
         teacher.setCourseList(courseService.addNewCourses());
-
         return teacher;
     }
 
     public List<Teacher> addNewTeachers() {
         Scanner scanner = new Scanner(System.in);
-        List<Teacher> teacherList = new ArrayList<>();
+        //List<Teacher> teacherList = new ArrayList<>();
         Boolean continueFlag = true;
         while (continueFlag) {
             teacherList.add(addNewTeacher());
@@ -85,7 +84,7 @@ public class TeacherService {
         }
         Boolean continueFlag = true;
         while (continueFlag){
-            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_STUDENT);
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_TEACHER);
             if (scanner.nextLine().equalsIgnoreCase("q")) {
                 continueFlag = false;
             }
@@ -113,7 +112,7 @@ public class TeacherService {
         }
         Boolean continueFlag = true;
         while (continueFlag){
-            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_STUDENT);
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_TEACHER);
             if (scanner.nextLine().equalsIgnoreCase("q")) {
                 continueFlag = false;
             }

@@ -13,7 +13,7 @@ import java.util.UUID;
 public class DepartmentService {
     public Scanner scanner = new Scanner(System.in);
     List<Department> departmentList=new ArrayList<>();
-
+    Department departmente=new Department();
     CourseService courseService = new CourseService();
     University university=new University();
 
@@ -26,8 +26,8 @@ public class DepartmentService {
 
         System.out.println("Enter Department Name");
         String deptName = scanner.nextLine();
-        deptName=deptName.toString();
         department.setName(deptName);
+        //departmentList.add(deptName);
 
         department.setOfferedCourses(courseService.addNewCourses());
 
@@ -36,7 +36,7 @@ public class DepartmentService {
 
     public List<Department> addNewDepartments() {
         Scanner scanner = new Scanner(System.in);
-        List<Department> departmentList = new ArrayList<>();
+       // List<Department> departmentList = new ArrayList<>();
         Boolean continueFlag = true;
         while (continueFlag) {
             //System.out.println("Entering multiple departments");
@@ -104,11 +104,7 @@ public class DepartmentService {
         }
     }
 
-    /*public void displayDepartment(){
-        for(Department d: departmentList){
-            System.out.println("ID:"+ d.getId()+" | "+ "Name: "+ d.getName());
-        }
-    }*/
+
 
     public Boolean handleDepartmentMenu(Integer departmentOption) {
         switch (departmentOption){

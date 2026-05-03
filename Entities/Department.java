@@ -19,7 +19,9 @@ public class Department extends ParentEntity implements DepartmentInterface {
     }
 
     List<Department> departmentList;
-    public List<Department> getDepartment(){return departmentList;}
+    public List<Department> getDepartment(){
+        return departmentList;
+    }
 
     @Override
     public Boolean addCourse(Course course) {

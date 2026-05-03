@@ -39,7 +39,6 @@ public class StudentService {
     public List<Student> addNewStudents(){
         Scanner scanner = new Scanner(System.in);
         List<Student> studentsList = new ArrayList<>();
-
         Boolean continueFlag = true;
         while (continueFlag) {
             studentsList.add(addNewStudent());

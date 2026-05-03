@@ -1,15 +1,19 @@
 package ObjectOrientedProgramming.OOPDemo.Services;
 
 import ObjectOrientedProgramming.OOPDemo.Entities.Course;
+import ObjectOrientedProgramming.OOPDemo.Entities.Department;
+import ObjectOrientedProgramming.OOPDemo.Entities.University;
 import ObjectOrientedProgramming.OOPDemo.Utils.Constants;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class CourseService {
+    public List<Course> courseList=new ArrayList<>();
+    University university=new University();
+    Department department=new Department();
 
     public Course addNewCourse() {
         Scanner scanner = new Scanner(System.in);
@@ -32,7 +36,7 @@ public class CourseService {
 
     public List<Course> addNewCourses() {
         Scanner scanner = new Scanner(System.in);
-        List<Course> courseList = new ArrayList<>();
+        //List<Course> courseList = new ArrayList<>();
         Boolean continueFlag = true;
         while (continueFlag) {
             //System.out.println("Entering multiple courses");
@@ -44,5 +48,89 @@ public class CourseService {
         }
 
         return courseList;
+    }
+
+    // updating department
+    public void updateCourse(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter old course Name");
+        String oldCourse=scanner.nextLine();
+        Boolean found=false;
+        for(Course c:courseList){
+            if(c.getName().equalsIgnoreCase(oldCourse)){
+                //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
+                System.out.println(Constants.COURSE_UPDATE_MESSAGE);
+                String courseToUpdate = scanner.nextLine();
+                c.setName(courseToUpdate);
+                found=true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("Course NOT found");
+        }
+        Boolean continueFlag = true;
+        while (continueFlag){
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_COURSE);
+            if (scanner.nextLine().equalsIgnoreCase("q")) {
+                continueFlag = false;
+            }
+        }
+    }
+    // delete department
+    public void deleteCourse(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Constants.COURSE_DELETE_MESSAGE);
+        String courseToDelete = scanner.nextLine();
+        Boolean found=false;
+        for(Course c :courseList){
+            if(c.getName().equalsIgnoreCase(courseToDelete)){
+                courseList.remove(c);
+                found=true;
+                break;
+            }
+        }
+        if(found){
+            System.out.println("Deleted successfully");
+        }else{
+            System.out.println("Deleted FAILED");
+
+        }
+        Boolean continueFlag = true;
+        while (continueFlag){
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_COURSE);
+            if (scanner.nextLine().equalsIgnoreCase("q")) {
+                continueFlag = false;
+            }
+        }
+    }
+
+
+
+    public Boolean handleCourse(Integer courseOption) {
+        switch (courseOption){
+            case 1 -> {
+                System.out.println("== Add New course ==");
+                addNewCourses();
+            }
+            case 2 -> {
+                System.out.println("== Update course ==");
+                updateCourse();
+            }
+            case 3 -> {
+                System.out.println("== Show course ==");
+                university.displayDepartments();
+            }
+
+            case 4 -> {
+                System.out.println("== Delete course ==");
+                deleteCourse();
+            }
+
+            case 5 -> {
+                return false;
+            }
+        }
+        return true;
     }
 }

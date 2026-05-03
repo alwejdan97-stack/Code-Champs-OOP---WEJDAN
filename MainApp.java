@@ -46,7 +46,7 @@ public class MainApp {
                         System.out.println("*********** Teacher Menu ***********");
                         System.out.println(MenuMessages.TEACHER_MENU_MESSAGE);
                         Integer teacherOption=input.nextInt();
-                        //teacherMenuContinue=teacherService.handleDepartmentMenu(teacherOption);
+                        teacherMenuContinue=teacherService.handleTeacherMenu(teacherOption);
                     }
                 }
                 case 4 -> {Boolean studentMenuContinue = true;

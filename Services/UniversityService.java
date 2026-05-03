@@ -19,9 +19,7 @@ public class UniversityService {
         university.setAddress("Oman");
         university.setId(UUID.randomUUID());
         university.setName("Oman University of Sciences");
-
         return university;
-
     }
 
     public Boolean handleUniversityMenu(Integer universityOption) {
