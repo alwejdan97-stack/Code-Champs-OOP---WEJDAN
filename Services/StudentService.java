@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class StudentService {
     CourseService courseService = new CourseService();
-    //DepartmentService departmentService = new DepartmentService();
+    DepartmentService departmentService = new DepartmentService();
     List<Student> studentList=new ArrayList<>();
     University university=new University();
     public static Scanner scanner=new Scanner(System.in);
