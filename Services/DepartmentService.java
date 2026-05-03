@@ -51,16 +51,17 @@ public class DepartmentService {
 
     // updating department
     public void updateDepartment(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter old department Name");
-        String oldDepartment=scanner.nextLine();
+        //Scanner scanner = new Scanner(System.in);
+        displayDepartments();
+        System.out.println("Enter department Name");
+        String department=scanner.nextLine();
         Boolean found=false;
         for(Department d: departmentList){
-            if(d.getName().equalsIgnoreCase(oldDepartment)){
+            if(d.getName().equalsIgnoreCase(department)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
-                String departmentToUpdate = scanner.nextLine();
-                d.setName(departmentToUpdate);
+                //String departmentToUpdate = scanner.nextLine();
+                d.setName(scanner.nextLine());
                 found=true;
                 break;
             }
@@ -78,7 +79,8 @@ public class DepartmentService {
     }
 // delete department
     public void deleteDepartment(){
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
+        displayDepartments();
         System.out.println(Constants.DEPARTMENT_DELETE_MESSAGE);
         String departmentToDelete = scanner.nextLine();
         Boolean found=false;
@@ -104,7 +106,14 @@ public class DepartmentService {
         }
     }
 
-    public void displayDepartments(){}
+    public void displayDepartments(){
+        if(departmentList.isEmpty()){
+            System.out.println("no department in the list");
+        }
+        for(Department dept: departmentList){
+            System.out.println("Department Name: " + dept.getName()+" | "+"Department ID: "+dept.getId());
+        }
+    }
 
 
 
