@@ -58,7 +58,7 @@ public class DepartmentService {
         for(Department d: departmentList){
             if(d.getName().equalsIgnoreCase(oldDepartment)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
-                System.out.println("Enter new department");
+                System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 String departmentToUpdate = scanner.nextLine();
                 d.setName(departmentToUpdate);
                 found=true;

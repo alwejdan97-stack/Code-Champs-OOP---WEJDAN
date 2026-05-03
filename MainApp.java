@@ -39,9 +39,30 @@ public class MainApp {
                     deptMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
                     }
                 }
-                case 3 -> System.out.println("Teacher Menu");
-                case 4 -> System.out.println("Student Menu");
-                case 5 -> System.out.println("Course Menu");
+                case 3 ->{Boolean teacherMenuContinue = true;
+                    while (teacherMenuContinue) {
+                        System.out.println("*********** Teacher Menu ***********");
+                        System.out.println(MenuMessages.TEACHER_MENU_MESSAGE);
+                        Integer departmentOption=input.nextInt();
+                        teacherMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                    }
+                }
+                case 4 -> {Boolean studentMenuContinue = true;
+                    while (studentMenuContinue) {
+                        System.out.println("*********** Teacher Menu ***********");
+                        System.out.println(MenuMessages.STUDENT_MENU_MESSAGE);
+                        Integer departmentOption=input.nextInt();
+                        studentMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                    }
+                }
+                case 5 -> {Boolean courseMenuContinue = true;
+                    while (courseMenuContinue) {
+                        System.out.println("*********** Teacher Menu ***********");
+                        System.out.println(MenuMessages.COURSE_MENU_MESSAGE);
+                        Integer departmentOption=input.nextInt();
+                        courseMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                    }
+                }
                 case 6 -> {
                     System.out.println("Exit");
                     mainMenuContinue = false;
