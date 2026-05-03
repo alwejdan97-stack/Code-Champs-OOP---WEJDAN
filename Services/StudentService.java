@@ -105,8 +105,8 @@ public class StudentService {
         }
     }
 
-    public Boolean handleStudentMenu(Integer departmentOption) {
-        switch (departmentOption){
+    public Boolean handleStudentMenu(Integer studentOption) {
+        switch (studentOption){
             case 1 -> {
                 System.out.println("== Add New Student ==");
                 addNewStudents();

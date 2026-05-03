@@ -1,7 +1,9 @@
 package ObjectOrientedProgramming.OOPDemo.Services;
 
 import ObjectOrientedProgramming.OOPDemo.Entities.Person;
+import ObjectOrientedProgramming.OOPDemo.Entities.Student;
 import ObjectOrientedProgramming.OOPDemo.Entities.Teacher;
+import ObjectOrientedProgramming.OOPDemo.Entities.University;
 import ObjectOrientedProgramming.OOPDemo.Utils.Constants;
 
 import java.util.ArrayList;
@@ -15,6 +17,9 @@ public class TeacherService {
     PersonService personService = new PersonService();
     DepartmentService departmentService = new DepartmentService();
     CourseService courseService = new CourseService();
+    University university=new University();
+    List<Teacher> teacherList = new ArrayList<>();
+
 
     public Teacher addNewTeacher() {
         Scanner scanner = new Scanner(System.in);
@@ -60,4 +65,85 @@ public class TeacherService {
         return teacherList;
     }
 
+    public void updateTeacher(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter old teacher Name");
+        String oldTeacher=scanner.nextLine();
+        Boolean found=false;
+        for(Teacher t: teacherList){
+            if(t.getName().equalsIgnoreCase(oldTeacher)){
+                //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
+                System.out.println(Constants.STUDENT_UPDATE_MESSAGE);
+                String teacherToUpdate = scanner.nextLine();
+                t.setName(teacherToUpdate);
+                found=true;
+                break;
+            }
+        }
+        if(!found){
+            System.out.println("Teacher NOT found");
+        }
+        Boolean continueFlag = true;
+        while (continueFlag){
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_STUDENT);
+            if (scanner.nextLine().equalsIgnoreCase("q")) {
+                continueFlag = false;
+            }
+        }
+    }
+
+    // delete department
+    public void deleteTeacher(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(Constants.STUDENT_DELETE_MESSAGE);
+        String teacherToDelete = scanner.nextLine();
+        Boolean found=false;
+        for(Teacher t:teacherList){
+            if(t.getName().equalsIgnoreCase(teacherToDelete)){
+                teacherList.remove(t);
+                found=true;
+                break;
+            }
+        }
+        if(found){
+            System.out.println("Deleted successfully");
+        }else{
+            System.out.println("Deleted FAILED");
+
+        }
+        Boolean continueFlag = true;
+        while (continueFlag){
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_STUDENT);
+            if (scanner.nextLine().equalsIgnoreCase("q")) {
+                continueFlag = false;
+            }
+        }
+    }
+
+    public Boolean handleTeacherMenu(Integer teacherOption) {
+        switch (teacherOption){
+            case 1 -> {
+                System.out.println("== Add New Teacher ==");
+                addNewTeacher();
+            }
+            case 2 -> {
+                System.out.println("== Update Teacher ==");
+                updateTeacher();
+            }
+            case 3 -> {
+                System.out.println("== Show Teacher ==");
+                university.displayDepartments();
+            }
+
+            case 4 -> {
+                System.out.println("== Delete Teacher ==");
+                deleteTeacher();
+            }
+
+            case 5 -> {
+                return false;
+            }
+        }
+        return true;
+    }
 }
