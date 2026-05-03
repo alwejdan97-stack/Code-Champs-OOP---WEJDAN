@@ -11,7 +11,6 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class DepartmentService {
-    //public static Department department = departmentInit();
     public Scanner scanner = new Scanner(System.in);
     List<Department> departmentList=new ArrayList<>();
 
@@ -55,8 +54,6 @@ public class DepartmentService {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter old department Name");
         String oldDepartment=scanner.nextLine();
-        //Department department = new Department();
-        //department.setName(oldDepartment);
         Boolean found=false;
         for(Department d: departmentList){
             if(d.getName().equalsIgnoreCase(oldDepartment)){
