@@ -40,26 +40,43 @@ public class StudentService {
 
     public List<Student> addNewStudents(){
         //Scanner scanner = new Scanner(System.in);
-        List<Student> studentsList = new ArrayList<>();
+        //List<Student> studentsList = new ArrayList<>();
         Boolean continueFlag = true;
         while (continueFlag) {
-            studentsList.add(addNewStudent());
+            studentList.add(addNewStudent());
             System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_STUDENTS);
             if (scanner.nextLine().equalsIgnoreCase("q")) {
                 continueFlag = false;
             }
         }
-        return studentsList;
+        return studentList;
     }
-    public void updateStudent(){
 
+    public void displayStudents(){
+        if(studentList.isEmpty()){
+            System.out.println("NO student in the list");
+            return;
+        }
+        for(Student st:studentList){
+            System.out.println("Student Name: "+st.getName()+" | "+" Student ID: "+st.getId());
+        }
+    }
+
+
+    public void updateStudent(){
         displayStudents();
         System.out.println("Enter student ID");
         String id=scanner.nextLine();
         UUID uuid=UUID.fromString(id);
+       /* UUID uuid;
+        try{
+            uuid=UUID.fromString(id);
+        }catch(Exception ex){
+            System.out.println("Invalid ID");
+        }*/
         Boolean found=false;
         for(Student s: studentList){
-            if(s.getName().equalsIgnoreCase(id)){
+            if(s.getId().equals(uuid)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 System.out.println(Constants.STUDENT_UPDATE_MESSAGE);
                 //String studentToUpdate = scanner.nextLine();
@@ -86,9 +103,15 @@ public class StudentService {
         System.out.println(Constants.STUDENT_DELETE_MESSAGE);
         String id = scanner.nextLine();
         UUID uuid=UUID.fromString(id);
+        /*UUID uuid;
+        try{
+            uuid=UUID.fromString(id);
+        }catch(Exception ex){
+            System.out.println("Invalid ID");
+        }*/
         Boolean found=false;
         for(Student s:studentList){
-            if(s.getName().equalsIgnoreCase(id)){
+            if(s.getId().equals(uuid)){
                 studentList.remove(s);
                 found=true;
                 break;
@@ -109,15 +132,6 @@ public class StudentService {
         }
     }
 
-    public void displayStudents(){
-        if(studentList.isEmpty()){
-            System.out.println("NO student in the list");
-        }
-        for(Student st:studentList){
-            System.out.println("Student Name: "+st.getName()+" | "+" Student ID: "+st.getId());
-        }
-    }
-
     public Boolean handleStudentMenu(Integer studentOption) {
         switch (studentOption){
             case 1 -> {
@@ -130,7 +144,7 @@ public class StudentService {
             }
             case 3 -> {
                 System.out.println("== Show Student ==");
-                university.displayDepartments();
+                displayStudents();
             }
 
             case 4 -> {
