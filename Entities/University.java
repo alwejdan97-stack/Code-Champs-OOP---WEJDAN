@@ -4,11 +4,15 @@ import ObjectOrientedProgramming.OOPDemo.Behaviours.DepartmentInterface;
 import ObjectOrientedProgramming.OOPDemo.Behaviours.UniversityInterface;
 import ObjectOrientedProgramming.OOPDemo.Services.UniversityService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class University extends ParentEntity implements UniversityInterface {
 
     private List<Department> departments;
+    public University(){
+        this.departments=new ArrayList<>();
+    }
 
     private String address;
 
@@ -69,7 +73,7 @@ public class University extends ParentEntity implements UniversityInterface {
 
     @Override
     public void displayDepartments() {
-        System.out.println("University Name" + UniversityService.university.getName());
+        System.out.println("University Name: " + UniversityService.university.getName());
         for (Department department : UniversityService.university.getDepartments()) {
             System.out.println("Department Id: " + department.getId());
             System.out.println("Department Name: " + department.getName());

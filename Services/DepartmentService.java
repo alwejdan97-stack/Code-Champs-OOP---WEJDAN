@@ -12,10 +12,11 @@ import java.util.UUID;
 
 public class DepartmentService {
     //public static Department department = departmentInit();
+    public Scanner scanner = new Scanner(System.in);
     List<Department> departmentList=new ArrayList<>();
 
     CourseService courseService = new CourseService();
-    University universityService=new University();
+    University university=new University();
 
     public Department addNewDepartment() {
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +27,7 @@ public class DepartmentService {
 
         System.out.println("Enter Department Name");
         String deptName = scanner.nextLine();
+        deptName=deptName.toString();
         department.setName(deptName);
 
         department.setOfferedCourses(courseService.addNewCourses());
@@ -47,20 +49,27 @@ public class DepartmentService {
         }
         return departmentList;
     }
-// updating department
+
+    // updating department
     public void updateDepartment(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter old department Name");
         String oldDepartment=scanner.nextLine();
-        Department department = new Department();
+        //Department department = new Department();
         //department.setName(oldDepartment);
+        Boolean found=false;
         for(Department d: departmentList){
             if(d.getName().equalsIgnoreCase(oldDepartment)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
-                System.out.println("Enter updated department");
+                System.out.println("Enter new department");
                 String departmentToUpdate = scanner.nextLine();
                 d.setName(departmentToUpdate);
+                found=true;
+                break;
             }
+        }
+        if(!found){
+            System.out.println("Department NOT found");
         }
         Boolean continueFlag = true;
         while (continueFlag){
@@ -75,12 +84,26 @@ public class DepartmentService {
         Scanner scanner = new Scanner(System.in);
         System.out.println(Constants.DEPARTMENT_DELETE_MESSAGE);
         String departmentToDelete = scanner.nextLine();
-        boolean remove=departmentList.remove(departmentToDelete);
+        Boolean found=false;
+        for(Department d:departmentList){
+            if(d.getName().equalsIgnoreCase(departmentToDelete)){
+                departmentList.remove(d);
+                found=true;
+                break;
+            }
+        }
+        if(found){
+            System.out.println("Deleted successfully");
+        }else{
+            System.out.println("Deleted FAILED");
+
+        }
+        /*boolean remove=departmentList.remove(departmentToDelete);
         if(remove){
             System.out.println("Deleted successfully");
         }else{
             System.out.println("Deleted FAILED");
-        }
+        }*/
         Boolean continueFlag = true;
         while (continueFlag){
             System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_DELETE_DEPARTMENT);
@@ -108,7 +131,7 @@ public class DepartmentService {
             }
             case 3 -> {
                 System.out.println("== Show Department ==");
-                universityService.displayDepartments();
+                university.displayDepartments();
             }
 
             case 4 -> {
