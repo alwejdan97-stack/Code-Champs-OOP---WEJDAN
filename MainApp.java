@@ -43,24 +43,24 @@ public class MainApp {
                     while (teacherMenuContinue) {
                         System.out.println("*********** Teacher Menu ***********");
                         System.out.println(MenuMessages.TEACHER_MENU_MESSAGE);
-                        Integer departmentOption=input.nextInt();
-                        teacherMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                        Integer teacherOption=input.nextInt();
+                        teacherMenuContinue=departmentService.handleDepartmentMenu(teacherOption);
                     }
                 }
                 case 4 -> {Boolean studentMenuContinue = true;
                     while (studentMenuContinue) {
-                        System.out.println("*********** Teacher Menu ***********");
+                        System.out.println("*********** Student Menu ***********");
                         System.out.println(MenuMessages.STUDENT_MENU_MESSAGE);
-                        Integer departmentOption=input.nextInt();
-                        studentMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                        Integer studentOption=input.nextInt();
+                        studentMenuContinue=departmentService.handleDepartmentMenu(studentOption);
                     }
                 }
                 case 5 -> {Boolean courseMenuContinue = true;
                     while (courseMenuContinue) {
-                        System.out.println("*********** Teacher Menu ***********");
+                        System.out.println("*********** Course Menu ***********");
                         System.out.println(MenuMessages.COURSE_MENU_MESSAGE);
-                        Integer departmentOption=input.nextInt();
-                        courseMenuContinue=departmentService.handleDepartmentMenu(departmentOption);
+                        Integer courseOption=input.nextInt();
+                        courseMenuContinue=departmentService.handleDepartmentMenu(courseOption);
                     }
                 }
                 case 6 -> {
