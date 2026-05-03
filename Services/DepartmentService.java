@@ -11,9 +11,9 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class DepartmentService {
-    public Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     List<Department> departmentList=new ArrayList<>();
-    Department departmente=new Department();
+    Department department=new Department();
     CourseService courseService = new CourseService();
     University university=new University();
 
@@ -104,6 +104,8 @@ public class DepartmentService {
         }
     }
 
+    public void displayDepartments(){}
+
 
 
     public Boolean handleDepartmentMenu(Integer departmentOption) {
@@ -118,7 +120,7 @@ public class DepartmentService {
             }
             case 3 -> {
                 System.out.println("== Show Department ==");
-                university.displayDepartments();
+                displayDepartments();
             }
 
             case 4 -> {
