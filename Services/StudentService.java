@@ -15,6 +15,7 @@ public class StudentService {
     DepartmentService departmentService = new DepartmentService();
     List<Student> studentList=new ArrayList<>();
     University university=new University();
+    public static Scanner scanner=new Scanner(System.in);
 
     public Student addNewStudent(){
         Scanner scanner = new Scanner(System.in);
@@ -24,20 +25,21 @@ public class StudentService {
         student.setId(UUID.randomUUID());
 
         System.out.println("Enter student Name: ");
-        String stdName = scanner.nextLine();
+        //String stdName = scanner.nextLine();
+        student.setName(scanner.nextLine());
 
-        System.out.println("Departments List");
+        /*System.out.println("Departments List");
         UniversityService.university.displayDepartments();
 
         System.out.println("Enter Department: ");
         student.setDepartment(departmentService.addNewDepartment());
 
-        student.setCourseList(student.getDepartment().getOfferedCourses());
+        student.setCourseList(student.getDepartment().getOfferedCourses());*/
      return student;
     }
 
     public List<Student> addNewStudents(){
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         List<Student> studentsList = new ArrayList<>();
         Boolean continueFlag = true;
         while (continueFlag) {
@@ -50,16 +52,18 @@ public class StudentService {
         return studentsList;
     }
     public void updateStudent(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter old student Name");
-        String oldStudent=scanner.nextLine();
+
+        displayStudents();
+        System.out.println("Enter student ID");
+        String id=scanner.nextLine();
+        UUID uuid=UUID.fromString(id);
         Boolean found=false;
         for(Student s: studentList){
-            if(s.getName().equalsIgnoreCase(oldStudent)){
+            if(s.getName().equalsIgnoreCase(id)){
                 //System.out.println(Constants.DEPARTMENT_UPDATE_MESSAGE);
                 System.out.println(Constants.STUDENT_UPDATE_MESSAGE);
-                String studentToUpdate = scanner.nextLine();
-                s.setName(studentToUpdate);
+                //String studentToUpdate = scanner.nextLine();
+                s.setName(scanner.nextLine());
                 found=true;
                 break;
             }
@@ -78,12 +82,13 @@ public class StudentService {
 
     // delete department
     public void deleteStudent(){
-        Scanner scanner = new Scanner(System.in);
+        displayStudents();
         System.out.println(Constants.STUDENT_DELETE_MESSAGE);
-        String studentToDelete = scanner.nextLine();
+        String id = scanner.nextLine();
+        UUID uuid=UUID.fromString(id);
         Boolean found=false;
         for(Student s:studentList){
-            if(s.getName().equalsIgnoreCase(studentToDelete)){
+            if(s.getName().equalsIgnoreCase(id)){
                 studentList.remove(s);
                 found=true;
                 break;
@@ -101,6 +106,15 @@ public class StudentService {
             if (scanner.nextLine().equalsIgnoreCase("q")) {
                 continueFlag = false;
             }
+        }
+    }
+
+    public void displayStudents(){
+        if(studentList.isEmpty()){
+            System.out.println("NO student in the list");
+        }
+        for(Student st:studentList){
+            System.out.println("Student Name: "+st.getName()+" | "+" Student ID: "+st.getId());
         }
     }
 
