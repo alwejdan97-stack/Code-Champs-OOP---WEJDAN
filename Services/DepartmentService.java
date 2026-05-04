@@ -1,5 +1,6 @@
 package ObjectOrientedProgramming.OOPDemo.Services;
 
+import ObjectOrientedProgramming.OOPDemo.Entities.Course;
 import ObjectOrientedProgramming.OOPDemo.Entities.Department;
 import ObjectOrientedProgramming.OOPDemo.Entities.University;
 import ObjectOrientedProgramming.OOPDemo.Utils.Constants;
@@ -104,6 +105,25 @@ public class DepartmentService {
         }
     }
 
+    public void displayByName(List<Department> departmentList){
+        displayDepartments();
+        System.out.println("Enter Department name to display");
+        String departmentToDisplay=scanner.nextLine();
+        Boolean found=false;
+        for(Department d: departmentList){
+            if(d.getName().equalsIgnoreCase(departmentToDisplay)){
+                // System.out.println("Department: "+);
+                System.out.println("Department Name: "+d.getName());
+                System.out.println("Department ID: "+d.getId());
+                System.out.println("Offered Courses: "+d.getOfferedCourses());
+                found=true;
+            }
+        }
+        if(!found){
+            System.out.println("Department NOT found");
+        }
+    }
+
     public void displayDepartments(){
         if(departmentList.isEmpty()){
             System.out.println("no department in the list");
@@ -129,11 +149,16 @@ public class DepartmentService {
             }
 
             case 4 -> {
+                System.out.println("== Show SPECIFIC Department ==");
+                displayByName(departmentList);
+            }
+
+            case 5 -> {
                 System.out.println("== Delete Department ==");
                 deleteDepartment();
             }
 
-            case 5 -> {
+            case 6 -> {
                 return false;
             }
         }

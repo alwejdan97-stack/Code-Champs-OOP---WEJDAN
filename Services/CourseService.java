@@ -107,7 +107,7 @@ public class CourseService {
 
     public void displayByName(List<Course> courseList){
         displayCourses();
-        System.out.println("Enter COURSE name to display");
+        System.out.println("Enter Course name to display");
         String courseToDisplay=scanner.nextLine();
         Boolean found=false;
         for(Course c: courseList){
@@ -146,11 +146,10 @@ public class CourseService {
             case 3 -> {
                 System.out.println("== Show Courses ==");
                 displayCourses();
-                //displayByName(scanner.nextLine());
             }
 
             case 4 -> {
-                System.out.println("== Show Course By Name ==");
+                System.out.println("== Show SPECIFIC Course ==");
                 displayByName(courseList);
             }
 
