@@ -105,9 +105,24 @@ public class CourseService {
         }
     }
 
-    /*public void displayByName(String name){
-        displayByName(scanner.nextLine());
-    }*/
+    public void displayByName(List<Course> courseList){
+        displayCourses();
+        System.out.println("Enter COURSE name to display");
+        String courseToDisplay=scanner.nextLine();
+        Boolean found=false;
+        for(Course c: courseList){
+            if(c.getName().equalsIgnoreCase(courseToDisplay)){
+               // System.out.println("Department: "+);
+                System.out.println("Course Name: "+c.getName());
+                System.out.println("Course Code: "+c.getCourseCode());
+                System.out.println("Course ID: "+c.getId());
+                found=true;
+            }
+        }
+        if(!found){
+            System.out.println("Course NOT found");
+        }
+    }
 
     public void displayCourses(){
         if(courseList.isEmpty()){
@@ -121,25 +136,30 @@ public class CourseService {
     public Boolean handleCourse(Integer courseOption) {
         switch (courseOption){
             case 1 -> {
-                System.out.println("== Add New course ==");
+                System.out.println("== Add New Course ==");
                 addNewCourses();
             }
             case 2 -> {
-                System.out.println("== Update course ==");
+                System.out.println("== Update Course ==");
                 updateCourse();
             }
             case 3 -> {
-                System.out.println("== Show course ==");
+                System.out.println("== Show Courses ==");
                 displayCourses();
                 //displayByName(scanner.nextLine());
             }
 
             case 4 -> {
-                System.out.println("== Delete course ==");
-                deleteCourse();
+                System.out.println("== Show Course By Name ==");
+                displayByName(courseList);
             }
 
             case 5 -> {
+                System.out.println("== Delete Course ==");
+                deleteCourse();
+            }
+
+            case 6 -> {
                 return false;
             }
         }

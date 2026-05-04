@@ -43,7 +43,8 @@ public class MenuMessages {
             1- ADD
             2- UPDATE
             3- DISPLAY
-            4- DELETE
-            5- Go Back to Main Menu
+            4- DISPLAY SPECIFIC COURSE
+            5- DELETE
+            6- Go Back to Main Menu
             """;
 }
