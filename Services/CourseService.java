@@ -105,16 +105,16 @@ public class CourseService {
         }
     }
 
-    public void displayByName(){
-
-    }
+    /*public void displayByName(String name){
+        displayByName(scanner.nextLine());
+    }*/
 
     public void displayCourses(){
         if(courseList.isEmpty()){
             System.out.println("NO course in the list");
         }
         for(Course c:courseList){
-            System.out.println("Course Name: "+ c.getName()+" | "+" Course ID: "+c.getId());
+            System.out.println("Course Name: "+ c.getName()+" | "+ " Course Code: "+ c.getCourseCode()+ " | " +" Course ID: "+c.getId());
         }
     }
 
@@ -131,6 +131,7 @@ public class CourseService {
             case 3 -> {
                 System.out.println("== Show course ==");
                 displayCourses();
+                //displayByName(scanner.nextLine());
             }
 
             case 4 -> {

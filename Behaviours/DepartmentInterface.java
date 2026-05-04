@@ -10,6 +10,5 @@ public interface DepartmentInterface {
     Boolean addCourse(Course course);
     Boolean removeCourse(Course course);
     Boolean modifyCourse(UUID id, Course updatedCourse);
-    //Boolean updateDepartment();
-    //Boolean deleteDepartment();
+
 }
