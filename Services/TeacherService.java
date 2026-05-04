@@ -124,7 +124,7 @@ public class TeacherService {
             return;
         }else {
             displayTeachers();
-            System.out.println("Enter Teacher name to display");
+            System.out.println(Constants.TEACHER_DISPLAY_BY_NAME_MESSAGE);
             String teacherToDisplay = scanner.nextLine();
             Boolean found = false;
             for (Teacher t : teacherList) {

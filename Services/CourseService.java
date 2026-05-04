@@ -110,7 +110,7 @@ public class CourseService {
             System.out.println("NO course in the list");
         } else {
             displayCourses();
-        System.out.println("Enter Course name to display");
+        System.out.println(Constants.COURSE_DISPLAY_BY_NAME_MESSAGE);
         String courseToDisplay = scanner.nextLine();
         Boolean found = false;
         for (Course c : courseList) {

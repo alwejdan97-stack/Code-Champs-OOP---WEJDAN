@@ -132,7 +132,7 @@ public class StudentService {
             return;
         }else {
             displayStudents();
-            System.out.println("Enter Student name to display");
+            System.out.println(Constants.STUDENT_DISPLAY_BY_NAME_MESSAGE);
             String studentToDisplay = scanner.nextLine();
             Boolean found = false;
             for (Student s : studentList) {

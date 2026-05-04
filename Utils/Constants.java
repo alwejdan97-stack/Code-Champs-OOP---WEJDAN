@@ -39,4 +39,9 @@ public class Constants {
     public static String COURSE_DELETE_MESSAGE = "Enter a course to delete";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_DELETE_COURSE= "Enter q to exit, press ENTER to continue for delete more course";
     public static String INPUT_EXIT_CONTINUE_MESSAGE_UPDATE_COURSE= "Enter q to exit, press ENTER to continue for update more course";
+    public static String TEACHER_DISPLAY_BY_NAME_MESSAGE= "Enter Teacher name to display";
+    public static String STUDENT_DISPLAY_BY_NAME_MESSAGE= "Enter Student name to display";
+    public static String COURSE_DISPLAY_BY_NAME_MESSAGE= "Enter Course name to display";
+    public static String DEPARTMENT_DISPLAY_BY_NAME_MESSAGE= "Enter Department name to display";
+
 }

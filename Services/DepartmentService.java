@@ -110,7 +110,7 @@ public class DepartmentService {
             System.out.println("NO department in the list");
         }else {
             displayDepartments();
-            System.out.println("Enter Department name to display");
+            System.out.println(Constants.DEPARTMENT_DISPLAY_BY_NAME_MESSAGE);
             String departmentToDisplay = scanner.nextLine();
             Boolean found = false;
             for (Department d : departmentList) {
