@@ -19,6 +19,7 @@ public class TeacherService {
     static CourseService courseService = new CourseService();
     static University university=new University();
     public static List<Teacher> teacherList = new ArrayList<>();
+    public static Scanner scanner=new Scanner(System.in);
 
 
     public Teacher addNewTeacher() {
@@ -117,6 +118,39 @@ public class TeacherService {
         }
     }
 
+    public void displayByName(List<Teacher> teacherList){
+        displayTeachers();
+        System.out.println("Enter Teacher name to display");
+        String teacherToDisplay=scanner.nextLine();
+        Boolean found=false;
+        for(Teacher t: teacherList){
+            if(t.getName().equalsIgnoreCase(teacherToDisplay)){
+                System.out.println("Teacher Name: "+t.getName());
+                System.out.println("Teacher ID: "+t.getId());
+                System.out.println("Date Of Birth: "+t.getDateOfBirth());
+                System.out.println("Teacher Email: "+t.getEmail());
+                System.out.println("Teacher ID Card: "+t.getIdCard());
+                System.out.println("Teacher Phone Number: "+t.getPhoneNumber());
+                System.out.println("Department: "+t.getDepartment());
+                System.out.println("Courses List: "+t.getCourseList());
+                found=true;
+            }
+        }
+        if(!found){
+            System.out.println("Teacher NOT found");
+        }
+    }
+
+    public void displayTeachers(){
+        if(teacherList.isEmpty()){
+            System.out.println("NO Teacher in the list");
+            return;
+        }
+        for(Teacher t:teacherList){
+            System.out.println("Teacher Name: "+t.getName()+ " | "+ " Teacher ID Card: "+t.getTeacherId()+" | "+" Teacher ID: "+t.getId());
+        }
+    }
+
     public Boolean handleTeacherMenu(Integer teacherOption) {
         switch (teacherOption){
             case 1 -> {
@@ -133,11 +167,16 @@ public class TeacherService {
             }
 
             case 4 -> {
+                System.out.println("== Show SPECIFIC Teacher ==");
+                displayByName(teacherList);
+            }
+
+            case 5 -> {
                 System.out.println("== Delete Teacher ==");
                 deleteTeacher();
             }
 
-            case 5 -> {
+            case 6 -> {
                 return false;
             }
         }
