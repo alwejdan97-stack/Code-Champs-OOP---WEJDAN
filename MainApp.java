@@ -62,7 +62,7 @@ public class MainApp {
                         System.out.println("*********** Course Menu ***********");
                         System.out.println(MenuMessages.COURSE_MENU_MESSAGE);
                         Integer courseOption=input.nextInt();
-                        courseMenuContinue=departmentService.handleDepartmentMenu(courseOption);
+                        courseMenuContinue=courseService.handleCourse(courseOption);
                     }
                 }
                 case 6 -> {

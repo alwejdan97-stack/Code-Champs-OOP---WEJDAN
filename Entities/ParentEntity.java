@@ -22,6 +22,10 @@ public class ParentEntity {
         this.name = name;
     }
 
+    public void displayByName(String name){
+        this.name=name;
+    }
+
     @Override
     public String toString() {
         return "ParentEntity{" +

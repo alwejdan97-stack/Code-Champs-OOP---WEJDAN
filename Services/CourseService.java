@@ -105,6 +105,10 @@ public class CourseService {
         }
     }
 
+    public void displayByName(){
+
+    }
+
     public void displayCourses(){
         if(courseList.isEmpty()){
             System.out.println("NO course in the list");
