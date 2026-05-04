@@ -107,7 +107,7 @@ public class DepartmentService {
 
     public void displayByName(List<Department> departmentList){
         if(departmentList.isEmpty()){
-            System.out.println("no department in the list");
+            System.out.println("NO department in the list");
         }else {
             displayDepartments();
             System.out.println("Enter Department name to display");
@@ -130,7 +130,7 @@ public class DepartmentService {
 
     public void displayDepartments(){
         if(departmentList.isEmpty()){
-            System.out.println("no department in the list");
+            System.out.println("NO department in the list");
         }
         for(Department dept: departmentList){
             System.out.println("Department Name: " + dept.getName()+" | "+"Department ID: "+dept.getId());
