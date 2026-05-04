@@ -127,26 +127,31 @@ public class StudentService {
     }
 
     public void displayByName(List<Student> studentList){
-        displayStudents();
-        System.out.println("Enter Student name to display");
-        String studentToDisplay=scanner.nextLine();
-        Boolean found=false;
-        for(Student s: studentList){
-            if(s.getName().equalsIgnoreCase(studentToDisplay)){
-                System.out.println("Student Name: "+s.getName());
-                System.out.println("Student ID: "+s.getId());
-                System.out.println("Date Of Birth: "+s.getDateOfBirth());
-                System.out.println("Student Email: "+s.getEmail());
-                System.out.println("Student ID Card: "+s.getIdCard());
-                System.out.println("Student Phone Number: "+s.getPhoneNumber());
-                System.out.println("Registration Year: "+s.getRegistrationYear());
-                System.out.println("Department: "+s.getDepartment());
-                System.out.println("Courses List: "+s.getCourseList());
-                found=true;
+        if(studentList.isEmpty()){
+            System.out.println("NO student in the list");
+            return;
+        }else {
+            displayStudents();
+            System.out.println("Enter Student name to display");
+            String studentToDisplay = scanner.nextLine();
+            Boolean found = false;
+            for (Student s : studentList) {
+                if (s.getName().equalsIgnoreCase(studentToDisplay)) {
+                    System.out.println("Student Name: " + s.getName());
+                    System.out.println("Student ID: " + s.getId());
+                    System.out.println("Date Of Birth: " + s.getDateOfBirth());
+                    System.out.println("Student Email: " + s.getEmail());
+                    System.out.println("Student ID Card: " + s.getIdCard());
+                    System.out.println("Student Phone Number: " + s.getPhoneNumber());
+                    System.out.println("Registration Year: " + s.getRegistrationYear());
+                    System.out.println("Department: " + s.getDepartment());
+                    System.out.println("Courses List: " + s.getCourseList());
+                    found = true;
+                }
             }
-        }
-        if(!found){
-            System.out.println("Student NOT found");
+            if (!found) {
+                System.out.println("Student NOT found");
+            }
         }
     }
 
