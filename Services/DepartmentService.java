@@ -106,21 +106,25 @@ public class DepartmentService {
     }
 
     public void displayByName(List<Department> departmentList){
-        displayDepartments();
-        System.out.println("Enter Department name to display");
-        String departmentToDisplay=scanner.nextLine();
-        Boolean found=false;
-        for(Department d: departmentList){
-            if(d.getName().equalsIgnoreCase(departmentToDisplay)){
-                // System.out.println("Department: "+);
-                System.out.println("Department Name: "+d.getName());
-                System.out.println("Department ID: "+d.getId());
-                System.out.println("Offered Courses: "+d.getOfferedCourses());
-                found=true;
+        if(departmentList.isEmpty()){
+            System.out.println("no department in the list");
+        }else {
+            displayDepartments();
+            System.out.println("Enter Department name to display");
+            String departmentToDisplay = scanner.nextLine();
+            Boolean found = false;
+            for (Department d : departmentList) {
+                if (d.getName().equalsIgnoreCase(departmentToDisplay)) {
+                    // System.out.println("Department: "+);
+                    System.out.println("Department Name: " + d.getName());
+                    System.out.println("Department ID: " + d.getId());
+                    System.out.println("Offered Courses: " + d.getOfferedCourses());
+                    found = true;
+                }
             }
-        }
-        if(!found){
-            System.out.println("Department NOT found");
+            if (!found) {
+                System.out.println("Department NOT found");
+            }
         }
     }
 
