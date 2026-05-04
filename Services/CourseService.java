@@ -105,22 +105,26 @@ public class CourseService {
         }
     }
 
-    public void displayByName(List<Course> courseList){
-        displayCourses();
+    public void displayByName(List<Course> courseList) {
+        if (courseList.isEmpty()) {
+            System.out.println("NO course in the list");
+        } else {
+            displayCourses();
         System.out.println("Enter Course name to display");
-        String courseToDisplay=scanner.nextLine();
-        Boolean found=false;
-        for(Course c: courseList){
-            if(c.getName().equalsIgnoreCase(courseToDisplay)){
-               // System.out.println("Department: "+);
-                System.out.println("Course Name: "+c.getName());
-                System.out.println("Course Code: "+c.getCourseCode());
-                System.out.println("Course ID: "+c.getId());
-                found=true;
+        String courseToDisplay = scanner.nextLine();
+        Boolean found = false;
+        for (Course c : courseList) {
+            if (c.getName().equalsIgnoreCase(courseToDisplay)) {
+                // System.out.println("Department: "+);
+                System.out.println("Course Name: " + c.getName());
+                System.out.println("Course Code: " + c.getCourseCode());
+                System.out.println("Course ID: " + c.getId());
+                found = true;
             }
         }
-        if(!found){
+        if (!found) {
             System.out.println("Course NOT found");
+        }
         }
     }
 
