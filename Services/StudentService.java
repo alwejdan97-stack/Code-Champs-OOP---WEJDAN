@@ -2,6 +2,7 @@ package ObjectOrientedProgramming.OOPDemo.Services;
 
 import ObjectOrientedProgramming.OOPDemo.Entities.Department;
 import ObjectOrientedProgramming.OOPDemo.Entities.Student;
+import ObjectOrientedProgramming.OOPDemo.Entities.Teacher;
 import ObjectOrientedProgramming.OOPDemo.Entities.University;
 import ObjectOrientedProgramming.OOPDemo.Utils.Constants;
 
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
+
+import static ObjectOrientedProgramming.OOPDemo.Services.TeacherService.personService;
 
 public class StudentService {
     CourseService courseService = new CourseService();
@@ -20,6 +23,7 @@ public class StudentService {
     public Student addNewStudent(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(" ** Adding new Student **");
+        Student teacher = (Student) personService.addNewPerson();
         //object student class
         Student student = new Student();
         student.setId(UUID.randomUUID());
@@ -28,13 +32,13 @@ public class StudentService {
         //String stdName = scanner.nextLine();
         student.setName(scanner.nextLine());
 
-        /*System.out.println("Departments List");
+        System.out.println("Departments List");
         UniversityService.university.displayDepartments();
 
         System.out.println("Enter Department: ");
         student.setDepartment(departmentService.addNewDepartment());
 
-        student.setCourseList(student.getDepartment().getOfferedCourses());*/
+        student.setCourseList(student.getDepartment().getOfferedCourses());
      return student;
     }
 
