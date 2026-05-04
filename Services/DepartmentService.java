@@ -116,7 +116,7 @@ public class DepartmentService {
             for (Department d : departmentList) {
                 if (d.getName().equalsIgnoreCase(departmentToDisplay)) {
                     // System.out.println("Department: "+);
-                    System.out.println("Department Name: " + d.getName());
+                    System.out.println("Department Name: " + d.getDepartment());
                     System.out.println("Department ID: " + d.getId());
                     System.out.println("Offered Courses: " + d.getOfferedCourses());
                     found = true;
