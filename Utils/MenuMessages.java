@@ -22,22 +22,25 @@ public class MenuMessages {
             1- ADD
             2- UPDATE
             3- DISPLAY
-            4- DELETE
-            5- Go Back to Main Menu
+            4- DISPLAY SPECIFIC DEPARTMENT
+            5- DELETE
+            6- Go Back to Main Menu
             """;
     public static String STUDENT_MENU_MESSAGE = """
             1- ADD
             2- UPDATE
             3- DISPLAY
-            4- DELETE
-            5- Go Back to Main Menu
+            4- DISPLAY SPECIFIC STUDENT
+            5- DELETE
+            6- Go Back to Main Menu
             """;
     public static String TEACHER_MENU_MESSAGE = """
             1- ADD
             2- UPDATE
             3- DISPLAY
-            4- DELETE
-            5- Go Back to Main Menu
+            4- DISPLAY SPECIFIC TEACHER
+            5- DELETE
+            6- Go Back to Main Menu
             """;
     public static String COURSE_MENU_MESSAGE = """
             1- ADD
