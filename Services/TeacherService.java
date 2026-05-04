@@ -119,25 +119,30 @@ public class TeacherService {
     }
 
     public void displayByName(List<Teacher> teacherList){
-        displayTeachers();
-        System.out.println("Enter Teacher name to display");
-        String teacherToDisplay=scanner.nextLine();
-        Boolean found=false;
-        for(Teacher t: teacherList){
-            if(t.getName().equalsIgnoreCase(teacherToDisplay)){
-                System.out.println("Teacher Name: "+t.getName());
-                System.out.println("Teacher ID: "+t.getId());
-                System.out.println("Date Of Birth: "+t.getDateOfBirth());
-                System.out.println("Teacher Email: "+t.getEmail());
-                System.out.println("Teacher ID Card: "+t.getIdCard());
-                System.out.println("Teacher Phone Number: "+t.getPhoneNumber());
-                System.out.println("Department: "+t.getDepartment());
-                System.out.println("Courses List: "+t.getCourseList());
-                found=true;
+        if(teacherList.isEmpty()){
+            System.out.println("NO Teacher in the list");
+            return;
+        }else {
+            displayTeachers();
+            System.out.println("Enter Teacher name to display");
+            String teacherToDisplay = scanner.nextLine();
+            Boolean found = false;
+            for (Teacher t : teacherList) {
+                if (t.getName().equalsIgnoreCase(teacherToDisplay)) {
+                    System.out.println("Teacher Name: " + t.getName());
+                    System.out.println("Teacher ID: " + t.getId());
+                    System.out.println("Date Of Birth: " + t.getDateOfBirth());
+                    System.out.println("Teacher Email: " + t.getEmail());
+                    System.out.println("Teacher ID Card: " + t.getIdCard());
+                    System.out.println("Teacher Phone Number: " + t.getPhoneNumber());
+                    System.out.println("Department: " + t.getDepartment());
+                    System.out.println("Courses List: " + t.getCourseList());
+                    found = true;
+                }
             }
-        }
-        if(!found){
-            System.out.println("Teacher NOT found");
+            if (!found) {
+                System.out.println("Teacher NOT found");
+            }
         }
     }
 
