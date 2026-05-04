@@ -126,7 +126,7 @@ public class StudentService {
         }
     }
 
-    public void displayByName(List<Student> studentList){
+    public void displayByName(){
         if(studentList.isEmpty()){
             System.out.println("NO student in the list");
             return;
@@ -182,7 +182,7 @@ public class StudentService {
 
             case 4 -> {
                 System.out.println("== Show SPECIFIC Student ==");
-                displayByName(studentList);
+                displayByName();
             }
 
             case 5 -> {

@@ -105,7 +105,7 @@ public class DepartmentService {
         }
     }
 
-    public void displayByName(List<Department> departmentList){
+    public void displayByName(){
         if(departmentList.isEmpty()){
             System.out.println("NO department in the list");
         }else {
@@ -154,7 +154,7 @@ public class DepartmentService {
 
             case 4 -> {
                 System.out.println("== Show SPECIFIC Department ==");
-                displayByName(departmentList);
+                displayByName();
             }
 
             case 5 -> {

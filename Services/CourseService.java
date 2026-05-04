@@ -105,7 +105,7 @@ public class CourseService {
         }
     }
 
-    public void displayByName(List<Course> courseList) {
+    public void displayByName() {
         if (courseList.isEmpty()) {
             System.out.println("NO course in the list");
         } else {
@@ -154,7 +154,7 @@ public class CourseService {
 
             case 4 -> {
                 System.out.println("== Show SPECIFIC Course ==");
-                displayByName(courseList);
+                displayByName();
             }
 
             case 5 -> {
